@@ -1,0 +1,59 @@
+.header-1 {
+    background-color: #6094B0;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.title-1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-1 {
+    margin-bottom: 10px;
+}
+
+.space {
+    display: flex;
+    justify-content: space-between;
+}
+
+.f-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-1, .form-2 {
+    margin-top: 15px;
+}
+
+.input-width {
+    width: 17rem !important;
+}
+
+.inp {
+    margin-top: 10px;
+}
+
+.btn-text {
+    margin: 0;
+}
+
+.form-2, .side, .down2 {
+    display: none;
+}
+
+.prevButton, .nextButton {
+    display: flex;
+    align-items: center;
+}
+
+.prevText {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+<ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis'[primaryYAxis]='primaryYAxis' [tooltip]='tooltip'>
+    <e-series-collection>
+        <e-series [dataSource]='chartData1' type='StackingLine' xName='x' yName='y' name='John' width='2' [marker]='marker' dashArray='5' fill='red'> </e-series>
+        <e-series [dataSource]='chartData2' type='StackingLine' xName='x' yName='y' name='Peter' width='2' [marker]='marker' dashArray='5' fill='yellow'> </e-series>
+        <e-series [dataSource]='chartData3' type='StackingLine' xName='x' yName='y' name='Steve' width='2' [marker]='marker' dashArray='5' fill='black'> </e-series>
+        <e-series [dataSource]='chartData4' type='StackingLine' xName='x' yName='y' name='Charle' width='2' [marker]='marker' dashArray='5' fill='blue'> </e-series>
+    </e-series-collection>
+</ejs-chart>

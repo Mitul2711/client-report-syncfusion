@@ -1,0 +1,102 @@
+<div>
+  <div class="title color">
+    <p class="title-text ">Report Option</p>
+    <span class="material-symbols-outlined">
+            close
+        </span>
+  </div>
+  <div class="form">
+
+    <div>
+      <form action="" [formGroup]="reportForm">
+        <div class="frow space">
+          <div>
+            <mat-form-field appearance="outline" class="form-row-1-input">
+              <mat-label>Report Type</mat-label>
+              <mat-select name="role" formControlName="reportType" >
+                <mat-option *ngFor="let report of reportTypes" [value]="report.value" (click)="reportTemplateList(report.value)" required>
+                  {{ report.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="form-row-1-input">
+              <mat-label>Report Template</mat-label>
+              <mat-select name="role" formControlName="reportTemplate">
+                <mat-option *ngFor="let report of reportTemplate" [value]="report.templateName" required>
+                  {{ report.templateName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="form-row-1-input">
+              <mat-label>Report Duration</mat-label>
+              <mat-select name="role" formControlName="reportDuration">
+                <mat-option *ngFor="let report of reportDuration" [value]="report.value" required>
+                  {{ report.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="frow">
+          <div class="mr">
+            <mat-form-field class="example-form-field" appearance="outline">
+              <mat-label>Choose start date</mat-label>
+              <input matInput [matDatepicker]="datepicker" formControlName="startDate">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+              <mat-datepicker #datepicker>
+                <mat-datepicker-actions>
+                  <button mat-button matDatepickerCancel>Cancel</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="example-form-field" appearance="outline">
+              <mat-label>Choose End date</mat-label>
+              <input matInput [matDatepicker]="datepicker1" formControlName="endDate">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="datepicker1"></mat-datepicker-toggle>
+              <mat-datepicker #datepicker1>
+                <mat-datepicker-actions>
+                  <button mat-button matDatepickerCancel>Cancel</button>
+                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="frow space btns">
+          <div>
+            <button mat-raised-button [routerLink]="['/']">Cancel</button>
+          </div>
+          <div>
+<!--            <button mat-raised-button color="primary" class="mb">-->
+<!--              <div class="frow">-->
+<!--                                <span class="material-symbols-outlined edit">-->
+<!--                                    edit_square-->
+<!--                                </span>-->
+<!--                <p class="editBtn">Edit Template</p>-->
+<!--              </div>-->
+<!--            </button>-->
+            <button mat-raised-button color="primary" (click)="submitReport()">Show Report</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div style="margin-top: 3rem">
+  <app-charts *ngIf="chart"></app-charts>
+  <app-table *ngIf="table"></app-table>
+</div>

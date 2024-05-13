@@ -1,0 +1,61 @@
+<div class="container">
+    <form [formGroup]="addStation">
+        <div class="form-container">
+            <div class="f-margin">
+                <ejs-textbox placeholder="Station Id"  floatLabelType="Auto"
+                    formControlName="stationId"></ejs-textbox>
+            </div>
+            <div class="f-margin">
+                <ejs-textbox appTogglePassword type="password" placeholder="Station Name" 
+                    floatLabelType="Auto" formControlName="stationName"></ejs-textbox>
+
+            </div>
+            <div class="f-margin">
+                <ejs-textarea floatLabelType="Auto" formControlName="channelDes"
+                    placeholder="Channel Description"></ejs-textarea>
+            </div>
+            <div class="f-margin">
+                <ejs-textbox floatLabelType="Auto"  placeholder="Area"
+                    formControlName="area"></ejs-textbox>
+            </div>
+            <div class="f-margin">
+                <ejs-textbox floatLabelType="Auto"  placeholder="TRU Rating"
+                    formControlName="truRating"></ejs-textbox>
+            </div>
+            <div class="color-picker f-margin">
+                <div class="row">
+                    <label>Back color</label>
+                    <input ejs-colorpicker id='color-picker' type='color' formControlName="backColor" />
+                </div>
+                <div class="row">
+                    <label>Fore Color</label>
+                    <input ejs-colorpicker id='color-picker' type='color' formControlName="foreColor" />
+                </div>
+            </div>
+            <div class="f-margin">
+                <ejs-textarea floatLabelType="Auto" formControlName="notes" 
+                    placeholder="Notes"></ejs-textarea>
+            </div>
+
+            <!-- temporary  For testing -->
+            <!-- <div class="f-margin">
+                <app-dropdownlist [typeofdata]="StationNames" (selectedValue)="onItemSelected($event)"
+                    (selectedValue)="onItemSelected($event)"></app-dropdownlist>
+            </div> -->
+        </div>
+        <div style="display: flex; align-content: space-between;">
+
+            <button ejs-button  [isPrimary]="true" (click)="onSubmit()">Save</button>
+
+            <button ejs-button  [isPrimary]="true" (click)="onCancel()">Cancel</button>
+
+        </div>
+        <button id="submitButton" class="btn btn-success" style="margin-right: 5px" ejs-button (click)="onSubmit()">
+            <span class="bi bi-check-lg"></span>
+            Submit
+        </button>
+        <button id="cancelButton" class="btn btn-danger" ejs-button (click)="onCancel()">
+            <span class="bi bi-x-lg"></span> Cancel
+        </button>
+
+    </form>

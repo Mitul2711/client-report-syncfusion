@@ -1,0 +1,60 @@
+<!--<div>-->
+<!--  <label *ngFor="let column of columns">-->
+<!--      <input type="checkbox" [(ngModel)]="column.visible" /> {{ column.headerText }}-->
+<!--  </label>-->
+<!--</div>-->
+
+
+
+<div class="menue">
+  <button mat-button color="primary" [matMenuTriggerFor]="menu">Filter Data</button>
+  <mat-menu #menu="matMenu" style="width: 200px">
+    <div class="selection-filter">
+    <label class="lable-css" *ngFor="let column of columns">
+      <input type="checkbox" [(ngModel)]="column.visible" /> {{ column.headerText }}
+    </label>
+    </div>
+  </mat-menu>
+
+</div>
+
+<div class="container">
+
+  <ejs-grid [dataSource]='data' width="1600px"
+            height="600px"
+      [allowPaging]="true"
+      [pageSettings]="pageSettings"
+      [allowSorting]="true"
+      [allowFiltering]="true"
+      [allowGrouping]="true"
+  >
+      <e-columns>
+          <ng-container *ngFor="let column of columns">
+              <e-column *ngIf="column.visible" [field]="column.field"
+                        [headerText]="column.headerText"></e-column>
+          </ng-container>
+      </e-columns>
+  </ejs-grid>
+
+<!--  <ejs-grid [dataSource]="data"  [allowSorting]="true" [allowPaging]="true" [allowFiltering]="true" [pageSettings]="pageSettings" [allowGrouping]="true">-->
+<!--    <e-columns>-->
+<!--      <e-column field="OrderID" headerText="Order ID" ></e-column>-->
+<!--      <e-column field="CustomerID" headerText="Customer ID"></e-column>-->
+<!--      <e-column field="ShipName" headerText="Ship Name"></e-column>-->
+<!--      <e-column field="ShipAddress" headerText="Ship Address"></e-column>-->
+<!--      <e-column field="ShipCountry" headerText="Ship Country"></e-column>-->
+<!--      <e-column field="OrderDate" headerText="OrderDate" width="100"></e-column>-->
+<!--    </e-columns>-->
+<!--  </ejs-grid>-->
+
+</div>
+
+
+<div>
+  <button mat-raised-button [routerLink]="['/']">Cancel</button>
+</div>
+
+
+
+
+

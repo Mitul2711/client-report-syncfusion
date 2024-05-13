@@ -1,0 +1,67 @@
+
+.title {
+  color: white;
+  background-color: #948979;
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 15px;
+  margin-bottom: 10px;
+}
+
+.title-text {
+  font-size: 20px;
+  margin: 0;
+}
+
+.title-text:last-child {
+  margin-left: auto;
+}
+
+.color{background-color:#4e73df;background-image:linear-gradient(180deg,#4e73df 10%,#224abe 100%);background-size:cover}
+
+.form {
+  padding: 5px 150px 5px 40px;
+}
+
+.frow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row-1-input {
+  width: 30rem;
+}
+
+.mr {
+  margin-right: 8.8rem;
+}
+
+.example-form-field {
+  width: 30rem;
+}
+
+.mb {
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.btns {
+  margin-top: 2rem;
+}
+
+.editBtn {
+  margin-top: 13px;
+}
+
+.edit {
+  margin-top: 9px;
+  margin-right: 3px;
+}

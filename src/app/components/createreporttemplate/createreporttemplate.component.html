@@ -1,0 +1,221 @@
+
+<div style="margin: 3%">
+  <div class="container">
+    <div class="HeadNote">
+      REPORT TEMPLATE
+    </div>
+    <hr>
+    <form [formGroup]="ReportForm">
+      <div class="form-row-1">
+        <mat-form-field appearance="outline" class="form-row-1-input">
+          <mat-label>Template Name</mat-label>
+          <input matInput placeholder="Template Name" required formControlName="templateName">
+          <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+          <!--        <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-row-1-input">
+          <mat-label>Report Type</mat-label>
+          <mat-select name="role" formControlName="reportType">
+            <mat-option *ngFor="let report of ReportType" [value]="report.value" required>
+              {{ report.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="form-full-row-input">
+          <mat-label>Report Name</mat-label>
+          <input matInput placeholder="Enter Report Name" required formControlName="reportName">
+          <!--        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+          <!--        <mat-hint>Hint</mat-hint>-->
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="form-full-row-input">
+          <mat-label>Remark-1</mat-label>
+          <input matInput placeholder="Enter Remarks" formControlName="remark1">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="form-full-row-input">
+          <mat-label>Remark-2</mat-label>
+          <input matInput placeholder="Enter Remarks" formControlName="remark2">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="form-full-row-input">
+          <mat-label>Remark-3</mat-label>
+          <input matInput placeholder="Enter Remarks" formControlName="remark3">
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <app-ropdownlist [typeofdata]="StationNames" (selectedValue)="onItemSelected($event)" > </app-ropdownlist>
+      </div>
+      <div>
+        <button (click)="openPopup()"> Popup</button>
+      </div>
+      <div>
+        <button (click)="openPopup2()"> Popup2</button>
+      </div>
+      <div>
+        <button (click)="openPopup3()"> Popup permission</button>
+      </div>
+
+      <div class="form-row-card ">
+
+        <mat-card class="main-card">
+          <mat-card-content>
+            <form action="" [formGroup]="stationForm">
+              <div class="frow space">
+                <section class="example-section">
+                  <mat-checkbox class="example-margin">Select Station</mat-checkbox>
+                </section>
+
+                <p class="title" style="cursor: pointer;" (click)="showValue()"><span class="material-symbols-outlined">
+                    double_arrow
+                  </span></p>
+
+              </div>
+              <div class="station-card">
+
+                <div *ngFor="let station of stationData">
+                  <section class="example-section">
+                    <mat-checkbox class="example-margin" [value]="station" (change)="onCheckboxChangeStation($event)">{{
+                      station }}</mat-checkbox>
+                  </section>
+                </div>
+
+              </div>
+            </form>
+          </mat-card-content>
+
+        </mat-card>
+
+        <mat-card class="main-card">
+          <mat-card-content>
+            <div class="frow space" style=" margin-bottom:3% ">
+              <section class="example-section">
+                <mat-checkbox class="example-margin">Select Analog Channel</mat-checkbox>
+              </section>
+
+            </div>
+
+            <div class="station-card">
+              <div *ngFor="let analogChannel of analogChannelData">
+                <section class="example-section">
+                  <mat-checkbox class="example-margin" [value]="analogChannel"
+                    (change)="onCheckboxChangeAnalog($event)">{{ analogChannel }}</mat-checkbox>
+                </section>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="main-card">
+          <mat-card-content>
+            <div class="frow space" style=" margin-bottom:3% ">
+              <section class="example-section">
+                <mat-checkbox class="example-margin">Select Digital Channel</mat-checkbox>
+              </section>
+            </div>
+
+            <div class="station-card">
+              <div *ngFor="let digitalChannel of digitalChannelData">
+                <section class="example-section">
+                  <mat-checkbox class="example-margin" [value]="digitalChannel"
+                    (change)="onCheckboxChangeDigital($event)">{{ digitalChannel }}</mat-checkbox>
+                </section>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+
+      <div class="select-radio" style="margin-top: 2%;">
+        <div class="radio-text">
+          Auto Save :
+        </div>
+        <div>
+          <mat-radio-group aria-label="Select an option" formControlName="autoSave">
+            <mat-radio-button value="true" style="margin-right: 40px">Yes</mat-radio-button>
+            <mat-radio-button value="false">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div class="select-radio">
+        <div class="radio-text">
+          Auto Email :
+        </div>
+        <div>
+          <mat-radio-group aria-label="Select an option" formControlName="autoMail">
+            <mat-radio-button value="true" style="margin-right: 40px">Yes</mat-radio-button>
+            <mat-radio-button value="false">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="submit-form-button">
+        <button mat-raised-button color="primary" type="submit" (click)="onsubmit()">Save</button>
+      </div>
+
+
+    </form>
+
+    <div class="ext-button">
+      <!--    <button mat-raised-button color="primary" [routerLink]="['/','table']" >Table</button>-->
+      <button mat-raised-button color="primary" [routerLink]="['/','report']">report</button>
+    </div>
+    <div class="control-styles" style="margin-top: 2%;">
+      <h4>Select channels which you want to dispaly in tables</h4>
+      <ejs-multiselect #sampleList2 [dataSource]='allChannels' [fields]='fields' [placeholder]='waterMark'
+        (change)='onSelectionChange($event)'></ejs-multiselect>
+
+    </div>
+
+    <table class="table">
+      <!-- Table header -->
+      <thead>
+        <tr>
+          <th>Channel Name</th>
+          <th>Editable Header</th>
+          <th>Select Operation</th>
+          <th>Select Channels</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let channel of selectedChannelData">
+          <td>{{ channel.channel_number }}</td>
+          <td>
+            <ejs-textbox placeholder="Header Name" floatLabelType="Auto"
+              [(ngModel)]="channelEdited[channel.channel_number]" *ngIf="!channel.isNewlyAdded" cssClass="custom-textbox"></ejs-textbox>
+            <ejs-textbox placeholder="Header Name" floatLabelType="Auto" *ngIf="channel.isNewlyAdded"
+              cssClass="custom-textbox"></ejs-textbox>
+          </td>
+          <td>
+            <ejs-multiselect #sampleList2 [dataSource]='operation' *ngIf="channel.isNewlyAdded" [fields]='fields'
+              placeholder='Select Operaion'></ejs-multiselect>
+          </td>
+          <td>
+            <ejs-multiselect #sampleList2 [dataSource]='OpeChannel' *ngIf="channel.isNewlyAdded" [fields]='fields'
+              placeholder='Select Channels'></ejs-multiselect>
+          </td>
+          <td>{{ channel.data }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div style="margin-top: 50px;">
+      <button mat-raised-button color="primary" type="submit" (click)="addRow()"
+        style="margin-top: 15px; margin-bottom: 80px">Add</button>
+    </div>
+
+  </div>
+
+
+  <hr>

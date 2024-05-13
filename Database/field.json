@@ -1,0 +1,390 @@
+{
+    "total": 55,
+    "rows": [
+        {
+            "RoleId": 5,
+            "FieldId": 37,
+            "FieldName": "GSMSignalAndRegistration",
+            "DisplayName": "Are you sure to show GSM Signal Strength and Registration?",
+            "Edit": false
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 14,
+            "FieldName": "IsAllowAcknowledgeMultiple",
+            "DisplayName": "Are you sure to allow this role to set Acknowledge Alarm?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 35,
+            "FieldName": "IsAllowAddDeleteDeviceOnOff",
+            "DisplayName": "Are you sure to allow user to add/delete device in device On/Off Popup ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 1,
+            "FieldName": "IsAllowAutoEmail",
+            "DisplayName": "Are you sure to allow this role to access auto email in report template?NA",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 29,
+            "FieldName": "IsAllowDailyEmailForAllData",
+            "DisplayName": "Access to email setting Daily Email for ALL Data.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 30,
+            "FieldName": "IsAllowDailyEmailForDailyData",
+            "DisplayName": "Access to email setting Daily Email for Daily.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 34,
+            "FieldName": "IsAllowDailyEmailForHourlyData",
+            "DisplayName": "Access to email setting Daily Email for Hourly.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 26,
+            "FieldName": "IsAllowDailyReport",
+            "DisplayName": "Access for report template Auto Save/Send Duration Daily.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 62,
+            "FieldName": "IsAllowGISTemplateAdd Legend text",
+            "DisplayName": "Allow user to enable Add Legend text in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 57,
+            "FieldName": "IsAllowGISTemplateAlarm Blinking",
+            "DisplayName": "Allow user to enable Alarm Blinking in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 44,
+            "FieldName": "IsAllowGISTemplateAnalogChannel",
+            "DisplayName": "Allow user to add analog channel in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 40,
+            "FieldName": "IsAllowGISTemplateBlockedMode",
+            "DisplayName": "Allow user to enable GIS Blocked in Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 39,
+            "FieldName": "IsAllowGISTemplateCommFailedMode",
+            "DisplayName": "Allow user to enable GIS Comm. Failed in Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 55,
+            "FieldName": "IsAllowGISTemplateCopy",
+            "DisplayName": "Allow user to copy existing GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 56,
+            "FieldName": "IsAllowGISTemplateData Flashing",
+            "DisplayName": "Allow user to enable Data Flashing in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 45,
+            "FieldName": "IsAllowGISTemplateDigitalChannel",
+            "DisplayName": "Allow user to add digital channel in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 46,
+            "FieldName": "IsAllowGISTemplateDigitalImageChannel",
+            "DisplayName": "Allow user to add digital image channel in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 52,
+            "FieldName": "IsAllowGISTemplateDrawShape",
+            "DisplayName": "Allow user to add Draw shape in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 47,
+            "FieldName": "IsAllowGISTemplateGroupChannel",
+            "DisplayName": "Allow user to add group channel in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 50,
+            "FieldName": "IsAllowGISTemplateImage",
+            "DisplayName": "Allow user to add Image in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 54,
+            "FieldName": "IsAllowGISTemplateImage",
+            "DisplayName": "Allow user to select image option to create GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 41,
+            "FieldName": "IsAllowGISTemplateInstanceOffMode",
+            "DisplayName": "Allow user to enable GIS InstanceOff in Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 49,
+            "FieldName": "IsAllowGISTemplatelabel",
+            "DisplayName": "Allow user to add label in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 53,
+            "FieldName": "IsAllowGISTemplateMap",
+            "DisplayName": "Allow user to select map option to create GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 38,
+            "FieldName": "IsAllowGISTemplateNormalMode",
+            "DisplayName": "Allow user to enable GIS Normal Mode in Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 51,
+            "FieldName": "IsAllowGISTemplateOperationStatus",
+            "DisplayName": "Allow user to add Operation Status in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 59,
+            "FieldName": "IsAllowGISTemplatePID Auto PSP Mode",
+            "DisplayName": "Allow user to enable PID Auto PSP Mode in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 60,
+            "FieldName": "IsAllowGISTemplatePID CONSTANT CURRENT Mode",
+            "DisplayName": "Allow user to enable PID CONSTANT CURRENT Mode in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 61,
+            "FieldName": "IsAllowGISTemplatePID CONSTANT VOLTAGE Mode",
+            "DisplayName": "Allow user to enable PID CONSTANT VOLTAGE Mode in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 58,
+            "FieldName": "IsAllowGISTemplatePID Manual Mode",
+            "DisplayName": "Allow user to enable PID Manual Mode in Template  ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 42,
+            "FieldName": "IsAllowGISTemplatePowerFailedMode",
+            "DisplayName": "Allow user to enable GIS Power Failed in Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 43,
+            "FieldName": "IsAllowGISTemplateStation",
+            "DisplayName": "Allow user to add station in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 48,
+            "FieldName": "IsAllowGISTemplateStationDateTime",
+            "DisplayName": "Allow user to add Station Date time in GIS Template ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 13,
+            "FieldName": "IsAllowLoginFooter",
+            "DisplayName": "Are you sure to allow this role to set Login Footer?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 12,
+            "FieldName": "IsAllowLoginHeader",
+            "DisplayName": "Are you sure to allow this role to set Login Header?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 2,
+            "FieldName": "IsAllowMimicFileAndSettings",
+            "DisplayName": "Are you sure to allow this role to access MIMIC Application File?NA",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 5,
+            "FieldName": "IsAllowMimicInstanceOff",
+            "DisplayName": "Are you sure to allow this role to acess instance off report?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 4,
+            "FieldName": "IsAllowMimicSettings",
+            "DisplayName": "Are you sure to allow this role to access setting menu?NA",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 21,
+            "FieldName": "IsAllowMonthlyEmailForAllData",
+            "DisplayName": "Access to email setting Monthly Email for ALL Data.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 23,
+            "FieldName": "IsAllowMonthlyEmailForDailyData",
+            "DisplayName": "Access to email setting Monthly Email for Daily.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 22,
+            "FieldName": "IsAllowMonthlyEmailForHourlyData",
+            "DisplayName": "Access to email setting Monthly Email for Hourly.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 27,
+            "FieldName": "IsAllowMonthlyReport",
+            "DisplayName": "Access for report template Auto Save/Send Duration Monthly.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 7,
+            "FieldName": "IsAllowPeriodicDataType",
+            "DisplayName": "Are you sure to allow this role to access Periodic broadcast Data Type setting?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 8,
+            "FieldName": "IsAllowPeriodicGPS",
+            "DisplayName": "Are you sure to allow this role to access Periodic broadcast GPS setting?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 6,
+            "FieldName": "IsAllowPeriodicMode",
+            "DisplayName": "Are you sure to allow this role to access Periodic broadcast Mode setting?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 36,
+            "FieldName": "IsAllowSaveDeviceOnOff",
+            "DisplayName": "Are you sure to allow user to save device in device On/Off Popup ?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 10,
+            "FieldName": "IsAllowTemplateEmail",
+            "DisplayName": "Access for report template Auto Email.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 9,
+            "FieldName": "IsAllowTemplateSave",
+            "DisplayName": "Access for report template Auto Save.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 11,
+            "FieldName": "IsAllowTemplateSend",
+            "DisplayName": "Are you sure to allow this role to access report template Auto Save/Send Duration?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 25,
+            "FieldName": "IsAllowTOFF",
+            "DisplayName": "Are you sure to allow this role to set T-OFF?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 24,
+            "FieldName": "IsAllowTON",
+            "DisplayName": "Are you sure to allow this role to set T-ON?",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 31,
+            "FieldName": "IsAllowWeeklyEmailForAllData",
+            "DisplayName": "Access to email setting Weekly Email for ALL Data.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 33,
+            "FieldName": "IsAllowWeeklyEmailForDailyData",
+            "DisplayName": "Access to email setting Weekly Email for Daily.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 32,
+            "FieldName": "IsAllowWeeklyEmailForHourlyData",
+            "DisplayName": "Access to email setting Weekly Email for Hourly.",
+            "Edit": true
+        },
+        {
+            "RoleId": 5,
+            "FieldId": 28,
+            "FieldName": "IsAllowWeeklyReport",
+            "DisplayName": "Access for report template Auto Save/Send Duration Weekly.",
+            "Edit": true
+        }
+    ]
+}

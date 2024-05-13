@@ -1,0 +1,94 @@
+{
+  "Templated": [
+    {
+      "templateName": "Report 1",
+      "reportType": "GR",
+      "reportName": "",
+      "remark1": "",
+      "remark2": "",
+      "remark3": "",
+      "autoSave": false,
+      "autoMail": false,
+      "id": "1c0c"
+    },
+    {
+      "id": "b0e1",
+      "templateName": "Report_graph 1",
+      "reportType": "DR",
+      "reportName": "Data submited",
+      "remark1": "ojhaouihd",
+      "remark2": "jandi",
+      "remark3": "ojonajdn",
+      "autoSave": "true",
+      "autoMail": "true"
+    },
+    {
+      "id": "4af2",
+      "templateName": "report Demo",
+      "reportType": "DR",
+      "reportName": "edad",
+      "remark1": "dadad",
+      "remark2": "d",
+      "remark3": "dadad",
+      "autoSave": "true",
+      "autoMail": "true"
+    },
+    {
+      "id": "2d01",
+      "templateName": "Report_201",
+      "reportType": "DR",
+      "reportName": "dadd",
+      "remark1": "dadd",
+      "remark2": "bjhjhb",
+      "remark3": "bhbvh",
+      "autoSave": "true",
+      "autoMail": "true"
+    },
+    {
+      "id": "2bc3",
+      "templateName": "Test",
+      "reportType": "DR",
+      "reportName": "Test",
+      "remark1": "Test",
+      "remark2": "Test",
+      "remark3": "Test",
+      "autoSave": "true",
+      "autoMail": "true"
+    },
+    {
+      "id": "c21b",
+      "templateName": "startDate",
+      "reportType": "GR",
+      "reportName": "startDate",
+      "remark1": "",
+      "remark2": "",
+      "remark3": "",
+      "autoSave": "",
+      "autoMail": ""
+    },
+    {
+      "id": "1c86",
+      "templateName": "Testing Data Report",
+      "reportType": "DR",
+      "reportName": "Data",
+      "remark1": "",
+      "remark2": "",
+      "remark3": "",
+      "autoSave": "true",
+      "autoMail": "false"
+    },
+    {
+      "id": "f25b",
+      "templateName": "11",
+      "reportType": "",
+      "reportName": "784",
+      "remark1": "",
+      "remark2": "",
+      "remark3": "",
+      "autoSave": "true",
+      "autoMail": "false",
+      "analogData": [],
+      "digitalData": []
+    }
+  ]
+}

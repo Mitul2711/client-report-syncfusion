@@ -1,0 +1,83 @@
+{
+    "stations": [
+      {
+        "name": "CP-TRU-001",
+        "selected": false,
+        "date": "",
+        "time": "",
+        "analog_channels": [
+          {
+            "channel_number": "AI1_1-TagNo1_1",
+            "data": 154
+          },
+          {
+            "channel_number": "AI1_1-TagNo1_2",
+            "data": 754
+          }
+        ],
+        "digital_channels": [
+          {
+            "channel_number": "DI1_1-TagNo1_1",
+            "data": 784
+          },
+          {
+            "channel_number": "DI1_1-TagNo1_2",
+            "data":254
+          }
+        ]
+      },
+      {
+        "name": "CP-TRU-002",
+        "selected": false,
+        "date": "",
+        "time": "",
+        "analog_channels": [
+          {
+            "channel_number": "AI2_1-TagNo1_1",
+            "data": 457
+          },
+          {
+            "channel_number": "AI2_1-TagNo1_2",
+            "data": 256
+          }
+        ],
+        "digital_channels": [
+          {
+            "channel_number": "DI2_1-TagNo1_1",
+            "data": 745
+          },
+          {
+            "channel_number": "DI2_1-TagNo1_2",
+
+            "data": 385
+          }
+        ]
+      },
+      {
+        "name": "CP-TRU-003",
+        "selected": false,
+        "date": "",
+        "time": "",
+        "analog_channels": [
+          {
+            "channel_number": "AI3_1-TagNo1_1",
+            "data":355
+          },
+          {
+            "channel_number": "AI3_1-TagNo1_2",
+            "data": 758
+          }
+        ],
+        "digital_channels": [
+          {
+            "channel_number": "DI3_1-TagNo1_1",
+            "data": 685
+          },
+          {
+            "channel_number": "DI3_1-TagNo1_2",
+            "data": 563
+          }
+        ]
+      }
+    ]
+  }
