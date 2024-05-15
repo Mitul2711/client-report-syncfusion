@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
+import { ActionEventArgs, EditSettingsModel, GridComponent, GroupSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -8,38 +10,33 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class PermissionComponent implements OnInit {
 
-  constructor(private dataService: DataService) {
-  }
+  @ViewChild('grid') public grid: GridComponent;
+  @ViewChild('checkbox') public checkbox: CheckBoxComponent;
+
+
+  constructor(private dataService: DataService) { }
 
   featureData: any;
   fieldData: any;
   dynamicColumns: any[] = [];
+  check: boolean = false;
+  data: Object[];
+  editSettings: any;
+  toolbar: string[];
 
   ngOnInit(): void {
-    
-    this.getData();
-    // this.fetchData();
+    this.getData(); // Assuming this method fetches your data
+    this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
+    this.toolbar = ['Edit', 'Update', 'Cancel'];
   }
-
- 
-  onAllCheckboxChange(checkbox: any, data: any, event: any) {
-    if (event.checked) {
-      data.View = true;
-      data.Add = true;
-      data.Edit = true;
-      data.Active = true;
-      data.Delete = true;
-      data.Export = true;
-    } else {
-      data.View = false;
-      data.Add = false;
-      data.Edit = false;
-      data.Active = false;
-      data.Delete = false;
-      data.Export = false;
+  
+  onActionComplete(args: ActionEventArgs): void {
+    if (args.requestType === 'save') {
+      // Log the edited data to the console
+      console.log(args.data);
     }
   }
-
+  
   // getData() {
   //   this.dataService.getFeatureData().subscribe(res => {
   //     this.featureData = res;      
@@ -49,7 +46,6 @@ export class PermissionComponent implements OnInit {
   //   })
   // }
   getData() {
-
     this.featureData = [
       {
         "RoleId": 5,
@@ -92,10 +88,71 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": false,
         "FeatureCode": 0
+      },
+      {
+        "RoleId": 5,
+        "Code": null,
+        "FeatureId": 3111,
+        "FeatureName": "Depolarisation",
+        "ProgrammerCode": null,
+        "Controller": null,
+        "Action": null,
+        "Url": null,
+        "ParentId": 0,
+        "SortIndex": 0,
+        "IsDisplayForRoleRights": false,
+        "View": false,
+        "Add": false,
+        "Edit": true,
+        "Active": false,
+        "Delete": false,
+        "Export": false,
+        "IsHeader": true,
+        "FeatureCode": 0
+      },
+      {
+        "RoleId": 5,
+        "Code": null,
+        "FeatureId": 3120,
+        "FeatureName": "Set Depol",
+        "ProgrammerCode": null,
+        "Controller": null,
+        "Action": null,
+        "Url": null,
+        "ParentId": 0,
+        "SortIndex": 0,
+        "IsDisplayForRoleRights": false,
+        "View": true,
+        "Add": false,
+        "Edit": false,
+        "Active": true,
+        "Delete": false,
+        "Export": true,
+        "IsHeader": false,
+        "FeatureCode": 0
+      },
+      {
+        "RoleId": 5,
+        "Code": null,
+        "FeatureId": 3121,
+        "FeatureName": "Create Depol Group",
+        "ProgrammerCode": null,
+        "Controller": null,
+        "Action": null,
+        "Url": null,
+        "ParentId": 0,
+        "SortIndex": 0,
+        "IsDisplayForRoleRights": false,
+        "View": false,
+        "Add": false,
+        "Edit": false,
+        "Active": false,
+        "Delete": false,
+        "Export": true,
+        "IsHeader": false,
+        "FeatureCode": 0
       }
-
     ];
-
 
     this.fieldData = [
       {
@@ -128,11 +185,9 @@ export class PermissionComponent implements OnInit {
       }
 
     ];
-
   }
 
   public headerText: Object = [{ text: "Feature Rights" },
   { text: "Field Rights" }];
-
 
 }

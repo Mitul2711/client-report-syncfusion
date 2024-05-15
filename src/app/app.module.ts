@@ -55,6 +55,8 @@ import { PermissionComponent } from './forms/permission/permission.component';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { GridAllModule } from '@syncfusion/ej2-angular-grids';
+import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 
 @NgModule({
   declarations: [
@@ -100,9 +102,11 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
     DropDownListModule,
     DialogModule,
     TabModule,
-    CheckBoxModule
+    CheckBoxModule,
+    GridAllModule,
+    NumericTextBoxAllModule
   ],
-  providers: [PageService, SortService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
+  providers: [PageService, SortService, PageService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
