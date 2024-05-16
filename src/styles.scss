@@ -22,3 +22,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .hidden-button {
     display: none !important;
 }
+
+
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

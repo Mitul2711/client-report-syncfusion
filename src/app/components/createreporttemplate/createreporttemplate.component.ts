@@ -9,6 +9,8 @@ import { PopupService } from 'src/app/service/popup.service';
 import { AddStationComponent } from '../add-station/add-station.component';
 import { AddUserComponent } from 'src/app/forms/add-user/add-user.component';
 import { PermissionComponent } from 'src/app/forms/permission/permission.component';
+import {PermisiionTreeComponent} from "../../forms/permisiion-tree/permisiion-tree.component";
+import {GridtreeCheckboxComponent} from "../../forms/gridtree-checkbox/gridtree-checkbox.component";
 
 @Component({
   selector: 'app-createreporttemplate',
@@ -102,8 +104,8 @@ export class CreatereporttemplateComponent implements OnInit {
 
     this.dataService.dataArray$.subscribe(data => {
       // console.log(data);
-    }) 
-    
+    })
+
   }
 
 
@@ -140,7 +142,7 @@ export class CreatereporttemplateComponent implements OnInit {
         });
       });
     });
-    
+
     this.selectedChannelData.forEach(channel => {
       this.channelEdited[channel.channel_number] = channel.channel_number;
     });
@@ -152,7 +154,7 @@ export class CreatereporttemplateComponent implements OnInit {
 
   tableSelectedData: any;
   tableSelectedData2: any;
-  
+
   onTableSelectionChange(args: ChangeEventArgs) {
     // Access the selected data from the args object
     this.tableSelectedData = args.value;
@@ -169,7 +171,7 @@ export class CreatereporttemplateComponent implements OnInit {
       data: '' // Initialize with empty values
     });
   }
-  
+
 
   ReportType = [
     { value: 'DR', viewValue: 'Data Report' },
@@ -214,7 +216,7 @@ export class CreatereporttemplateComponent implements OnInit {
       }
     }
     // console.log(this.selectedStations);
-    
+
   }
 
   onCheckboxChangeAnalog(event: any) {
@@ -233,7 +235,7 @@ export class CreatereporttemplateComponent implements OnInit {
       }
     }
   }
-  
+
 
   onCheckboxChangeDigital(event: any) {
     const station = event.source.value;
@@ -251,7 +253,7 @@ export class CreatereporttemplateComponent implements OnInit {
       }
     }
   }
-  
+
 
   showValue() {
     this.digitalChannelData = [];
@@ -294,7 +296,7 @@ export class CreatereporttemplateComponent implements OnInit {
   //     });
   //   });
   //   console.log(this.analogData);
-    
+
   //   this.digitalChannel.forEach(element => {
   //     element.forEach((e: any) => {
   //       this.selectedDigitalChannel.forEach((data) => {
@@ -321,7 +323,7 @@ export class CreatereporttemplateComponent implements OnInit {
 
     this.sampleList2.dataSource = this.allChannels;
     this.sampleList2.refresh();
-    
+
     if (this.ReportForm.valid) {
       const formData = this.ReportForm.value;
       const combinedData = {
@@ -365,26 +367,36 @@ export class CreatereporttemplateComponent implements OnInit {
     };
   }
 
-  selectedValueFromChild: any 
+  selectedValueFromChild: any
 
   onItemSelected(value: any) {
-    this.selectedValueFromChild = value; 
+    this.selectedValueFromChild = value;
     console.log(this.selectedValueFromChild)
   }
 
    openPopup() {
-    
+
     this.popupService.openModal(AddStationComponent, this.viewContainerRef);
   }
 
   openPopup2() {
-    
+
     this.popupService.openModal(AddUserComponent, this.viewContainerRef);
   }
 
   openPopup3() {
-    
+
     this.popupService.openModal(PermissionComponent, this.viewContainerRef);
   }
+
+  openPopup4(){
+    this.popupService.openModal(PermisiionTreeComponent, this.viewContainerRef);
+  }
+
+  openPopup5(){
+    this.popupService.openModal(GridtreeCheckboxComponent, this.viewContainerRef);
+  }
+
+
 
 }

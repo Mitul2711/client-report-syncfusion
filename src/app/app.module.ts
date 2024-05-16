@@ -15,6 +15,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
+  ColumnsDirective,
   FilterService,
   GridModule,
   GroupModelGenerator,
@@ -55,6 +56,9 @@ import { PermissionComponent } from './forms/permission/permission.component';
 import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { PermisiionTreeComponent } from './forms/permisiion-tree/permisiion-tree.component';
+import {findChildrenRecords, TreeGridModule} from "@syncfusion/ej2-angular-treegrid";
+import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +72,9 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
     RopdownlistComponent,
     AddStationComponent,
     AddUserComponent,
-    PermissionComponent
+    PermissionComponent,
+    PermisiionTreeComponent,
+    GridtreeCheckboxComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +106,10 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
     DropDownListModule,
     DialogModule,
     TabModule,
-    CheckBoxModule
+    CheckBoxModule,
+    TreeGridModule,
+
+
   ],
   providers: [PageService, SortService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
   bootstrap: [AppComponent],
