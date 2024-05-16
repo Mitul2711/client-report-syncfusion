@@ -1,0 +1,119 @@
+import * as React from 'react';
+import { render } from 'react-dom';
+import './index.css';
+import {
+  TreeGridComponent,
+  ColumnsDirective,
+  ColumnDirective,
+} from '@syncfusion/ej2-react-treegrid';
+import { sampleData } from './data';
+import { SampleBase } from './sample-base';
+import { findChildrenRecords } from '@syncfusion/ej2-treegrid';
+
+interface CheckboxColumnProps {}
+
+interface CheckboxColumnState {}
+
+class CheckboxColumn extends SampleBase<CheckboxColumnProps, CheckboxColumnState> {
+  private selectionSettings = { type: 'Multiple' };
+
+  constructor(props: CheckboxColumnProps) {
+    super(props);
+    this.rowSelected = this.rowSelected.bind(this);
+    this.rowDeselected = this.rowDeselected.bind(this);
+    this.checkboxChange = this.checkboxChange.bind(this);
+  }
+
+  private rowMethod(args: any): void {
+    if (args.target == null) return;
+    const treegrid: any = document.getElementsByClassName('e-treegrid')[0]
+      .ej2_instances[0];
+    const row = treegrid.getRowByIndex(args.rowIndex);
+    const checkbox = row.querySelector('.e-frame.e-icons');
+    if (
+      args.target == checkbox &&
+      checkbox.parentElement.classList.contains('e-checkbox-wrapper')
+    )
+      return;
+    else if (checkboxevent) {
+      if (args.name != 'rowDeselected') {
+        checkbox.classList.add('e-check');
+      } else checkbox.classList.remove('e-check');
+    }
+  }
+
+  private rowSelected(args: any): void {
+    this.rowMethod(args);
+  }
+
+  private rowDeselected(args: any): void {
+    this.rowMethod(args);
+  }
+
+  private checkboxChange(args: any): void {
+    // Your checkboxChange logic here
+  }
+
+  public render(): JSX.Element {
+    return (
+      <div className="control-pane">
+        <div className="control-section">
+          <TreeGridComponent
+            dataSource={sampleData}
+            treeColumnIndex={1}
+            childMapping="subtasks"
+            height="410"
+            autoCheckHierarchy={true}
+            checkboxChange={this.checkboxChange}
+            selectionSettings={this.selectionSettings}
+            rowSelected={this.rowSelected}
+            rowDeselected={this.rowDeselected}
+          >
+            <ColumnsDirective>
+              <ColumnDirective
+                field="taskID"
+                headerText="Task ID"
+                width="60"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="taskName"
+                headerText="Task Name"
+                width="200"
+                showCheckbox={true}
+              />
+              <ColumnDirective
+                field="startDate"
+                headerText="Start Date"
+                width="90"
+                format="yMd"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="endDate"
+                headerText="End Date"
+                width="90"
+                format="yMd"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="duration"
+                headerText="Duration"
+                width="90"
+                textAlign="Right"
+              />
+              <ColumnDirective
+                field="progress"
+                headerText="Progress"
+                width="90"
+                textAlign="Right"
+              />
+            </ColumnsDirective>
+          </TreeGridComponent>
+        </div>
+      </div>
+    );
+  }
+}
+
+render(<CheckboxColumn />, document.getElementById('sample'));

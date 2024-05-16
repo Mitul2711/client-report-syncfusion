@@ -1,0 +1,55 @@
+import { EventEmitter, Injectable, ViewContainerRef } from '@angular/core';
+import { DialogComponent, DialogUtility } from '@syncfusion/ej2-angular-popups';
+
+
+
+@Injectable({ providedIn: 'any' })
+export class ModelDialogService {
+
+    dialogInstance: any
+    componentRef: any;
+    dialogData: any;
+    dialogClosed = new EventEmitter<void>();
+
+    constructor() { }
+
+    openModal<T>(component: any, viewContainerRef: ViewContainerRef, incomingData?: any, dialogClosed?: () => void) {
+        this.componentRef = viewContainerRef.createComponent(component);
+
+            const contentElement = this.componentRef.location.nativeElement;
+
+           const contentWidth = contentElement.offsetWidth;
+               const dialogWidth = `${contentWidth}px`;
+
+        this.dialogData = incomingData
+        this.dialogInstance = DialogUtility.confirm({
+            content: this.componentRef.location.nativeElement,
+            showCloseIcon: true,
+            closeOnEscape: true,
+            animationSettings: { effect: 'Zoom' },
+            cssClass: 'hide-footer',
+            width: dialogWidth
+        });
+        this.dialogInstance.beforeOpen = () => {
+        };
+        if (dialogClosed) {
+            this.dialogInstance.close = dialogClosed;
+        }
+        this.dialogInstance.close = () => {
+            this.componentRef.destroy();
+            this.dialogInstance.destroy();
+            if (dialogClosed) {
+                dialogClosed();
+            }
+            this.dialogClosed.emit();
+        };
+    }
+
+
+    cancel() {
+        this.componentRef.destroy();
+        this.dialogInstance.destroy();
+        this.dialogClosed.emit();
+    }
+
+}

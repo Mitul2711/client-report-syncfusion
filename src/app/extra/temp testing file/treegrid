@@ -1,0 +1,50 @@
+import { NgModule, ViewChild } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import {
+  PageService,
+  SortService,
+  FilterService,
+} from '@syncfusion/ej2-angular-treegrid';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
+
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { sampleData } from './datasource';
+import { RowDataBoundEventArgs } from '@syncfusion/ej2-grids';
+
+@Component({
+  imports: [TreeGridModule, ButtonModule, DropDownListAllModule],
+
+  providers: [PageService, SortService, FilterService],
+  standalone: true,
+  selector: 'app-container',
+  encapsulation: ViewEncapsulation.None,
+  template: `<ejs-treegrid [dataSource]='data' [treeColumnIndex]='1' height='250' [enableHover]='false' childMapping='subtasks' (rowDataBound)='onRowDataBound($event)'>
+  <e-columns>
+      <e-column field='taskID' headerText='Task ID' textAlign='Right' width=90></e-column>
+      <e-column field='taskName' headerText='Task Name' textAlign='Left' width=180></e-column>
+      <e-column field='startDate' headerText='Start Date' textAlign='Right' format='yMd' width=90></e-column>
+      <e-column field='duration' headerText='Duration' textAlign='Right' width=80></e-column>
+  </e-columns>
+</ejs-treegrid>
+`,
+  styles: [``],
+})
+export class AppComponent implements OnInit {
+  public data?: Object[];
+
+  ngOnInit(): void {
+    this.data = sampleData;
+  }
+
+  public onRowDataBound(args: RowDataBoundEventArgs): void {
+    const row: HTMLElement | null = args.row as HTMLElement | null;
+    const data = args.data as any;
+
+    // Check if the row and data are defined and if the row is a child row
+    if (row && data && data.parentItem) {
+      row.style.backgroundColor = '#D3D3D3'; // Set your desired background color
+    }
+  }
+}

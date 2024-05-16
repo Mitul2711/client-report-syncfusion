@@ -16,12 +16,12 @@ export class PermissionComponent implements OnInit {
   dynamicColumns: any[] = [];
 
   ngOnInit(): void {
-    
+
     this.getData();
     // this.fetchData();
   }
 
- 
+
   onAllCheckboxChange(checkbox: any, data: any, event: any) {
     if (event.checked) {
       data.View = true;
@@ -42,7 +42,7 @@ export class PermissionComponent implements OnInit {
 
   // getData() {
   //   this.dataService.getFeatureData().subscribe(res => {
-  //     this.featureData = res;      
+  //     this.featureData = res;
   //   });
   //   this.dataService.getFieldData().subscribe(res => {
   //     this.fieldData = res;
@@ -71,8 +71,8 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": false,
         "FeatureCode": 0
-      },
-      {
+    },
+    {
         "RoleId": 5,
         "Code": null,
         "FeatureId": 8,
@@ -92,7 +92,49 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": false,
         "FeatureCode": 0
-      }
+    },
+    {
+        "RoleId": 5,
+        "Code": null,
+        "FeatureId": 3111,
+        "FeatureName": "Depolarisation",
+        "ProgrammerCode": null,
+        "Controller": null,
+        "Action": null,
+        "Url": null,
+        "ParentId": 0,
+        "SortIndex": 0,
+        "IsDisplayForRoleRights": false,
+        "View": false,
+        "Add": false,
+        "Edit": true,
+        "Active": false,
+        "Delete": false,
+        "Export": false,
+        "IsHeader": true,
+        "FeatureCode": 0
+    },
+    {
+        "RoleId": 5,
+        "Code": null,
+        "FeatureId": 3120,
+        "FeatureName": "Set Depol",
+        "ProgrammerCode": null,
+        "Controller": null,
+        "Action": null,
+        "Url": null,
+        "ParentId": 3111, // ParentId indicating this feature belongs to "Depolarisation"
+        "SortIndex": 0,
+        "IsDisplayForRoleRights": false,
+        "View": true,
+        "Add": false,
+        "Edit": false,
+        "Active": true,
+        "Delete": false,
+        "Export": true,
+        "IsHeader": false,
+        "FeatureCode": 0
+    }
 
     ];
 
@@ -130,6 +172,31 @@ export class PermissionComponent implements OnInit {
     ];
 
   }
+  onParentCheckboxChange(data: any, event: any): void {
+    // Assuming you have a field in your data indicating parent-child relationship (e.g., ParentId)
+    if (data.ParentId === 0) { // Assuming 0 indicates a parent feature
+      // Loop through child features and update their checkbox states accordingly
+      const parentChecked = event.target.checked;
+      this.updateChildCheckboxStates(data, parentChecked);
+    }
+  }
+
+  // Method to update checkbox states of child features
+  updateChildCheckboxStates(parentFeature: any, isChecked: boolean): void {
+    const parentId = parentFeature.FeatureId; // Assuming FeatureId is the unique identifier
+    this.featureData.forEach(feature => {
+      if (feature.ParentId === parentId) { // Assuming ParentId indicates the parent-child relationship
+        // Update the state of the child checkbox
+        feature.View = isChecked;
+        feature.Add = isChecked;
+        feature.Edit = isChecked;
+        feature.Active = isChecked;
+        feature.Delete = isChecked;
+        feature.Export = isChecked;
+      }
+    });
+  }
+  
 
   public headerText: Object = [{ text: "Feature Rights" },
   { text: "Field Rights" }];
