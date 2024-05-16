@@ -69,6 +69,16 @@ export class PermisiionTreeComponent implements OnInit {
     console.log("Row Data:", args.rowData);
     console.log("Checkbox Change");
 
+    const isChecked = !args.checked;
+    const rowData = !args.rowData;
+
+    // Update all fields of the row data to the checked status
+    Object.keys(rowData).forEach(key => {
+      rowData[key] = isChecked;
+    });
+
+    // Log the updated row data
+    console.log("Updated Row Data:", rowData);
   }
 
 
