@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {sampleData} from "./data";
 import {RowDataBoundEventArgs} from "@syncfusion/ej2-angular-grids";
 import {PopupService} from "../../service/popup.service";
-import {findChildrenRecords} from "@syncfusion/ej2-angular-treegrid";
 
 @Component({
   selector: 'app-permisiion-tree',
@@ -12,7 +11,6 @@ import {findChildrenRecords} from "@syncfusion/ej2-angular-treegrid";
 export class PermisiionTreeComponent implements OnInit {
 
   public selectionSettings: any = { type: 'Multiple' };
-  public toolbar: string[] = ['Search'];
 
 
   constructor(private dilogopenservcie: PopupService){
