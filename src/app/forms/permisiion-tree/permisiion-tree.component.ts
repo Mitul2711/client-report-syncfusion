@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {sampleData} from "./data";
 import {RowDataBoundEventArgs} from "@syncfusion/ej2-angular-grids";
 import {PopupService} from "../../service/popup.service";
-import {findChildrenRecords} from "@syncfusion/ej2-angular-treegrid";
 
 @Component({
   selector: 'app-permisiion-tree',
@@ -12,7 +11,6 @@ import {findChildrenRecords} from "@syncfusion/ej2-angular-treegrid";
 export class PermisiionTreeComponent implements OnInit {
 
   public selectionSettings: any = { type: 'Multiple' };
-  public toolbar: string[] = ['Search'];
 
 
   constructor(private dilogopenservcie: PopupService){
@@ -69,6 +67,16 @@ export class PermisiionTreeComponent implements OnInit {
     console.log("Row Data:", args.rowData);
     console.log("Checkbox Change");
 
+    const isChecked = !args.checked;
+    const rowData = !args.rowData;
+
+    // Update all fields of the row data to the checked status
+    Object.keys(rowData).forEach(key => {
+      rowData[key] = isChecked;
+    });
+
+    // Log the updated row data
+    console.log("Updated Row Data:", rowData);
   }
 
 
