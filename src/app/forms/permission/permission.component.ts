@@ -26,14 +26,27 @@ export class PermissionComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getData(); // Assuming this method fetches your data
-    this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
-    this.toolbar = ['Edit', 'Update', 'Cancel'];
+
+    this.getData();
+    // this.fetchData();
   }
 
-  onActionComplete(args: ActionEventArgs): void {
-    if (args.requestType === 'save') {
-      console.log(args.data);
+
+  onAllCheckboxChange(checkbox: any, data: any, event: any) {
+    if (event.checked) {
+      data.View = true;
+      data.Add = true;
+      data.Edit = true;
+      data.Active = true;
+      data.Delete = true;
+      data.Export = true;
+    } else {
+      data.View = false;
+      data.Add = false;
+      data.Edit = false;
+      data.Active = false;
+      data.Delete = false;
+      data.Export = false;
     }
   }
 
@@ -43,7 +56,7 @@ export class PermissionComponent implements OnInit {
 
   // getData() {
   //   this.dataService.getFeatureData().subscribe(res => {
-  //     this.featureData = res;      
+  //     this.featureData = res;
   //   });
   //   this.dataService.getFieldData().subscribe(res => {
   //     this.fieldData = res;
@@ -71,8 +84,8 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": false,
         "FeatureCode": 0
-      },
-      {
+    },
+    {
         "RoleId": 5,
         "Code": null,
         "FeatureId": 8,
@@ -92,8 +105,8 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": false,
         "FeatureCode": 0
-      },
-      {
+    },
+    {
         "RoleId": 5,
         "Code": null,
         "FeatureId": 3111,
@@ -113,8 +126,8 @@ export class PermissionComponent implements OnInit {
         "Export": false,
         "IsHeader": true,
         "FeatureCode": 0
-      },
-      {
+    },
+    {
         "RoleId": 5,
         "Code": null,
         "FeatureId": 3120,
@@ -123,7 +136,7 @@ export class PermissionComponent implements OnInit {
         "Controller": null,
         "Action": null,
         "Url": null,
-        "ParentId": 0,
+        "ParentId": 3111, // ParentId indicating this feature belongs to "Depolarisation"
         "SortIndex": 0,
         "IsDisplayForRoleRights": false,
         "View": true,
@@ -134,28 +147,8 @@ export class PermissionComponent implements OnInit {
         "Export": true,
         "IsHeader": false,
         "FeatureCode": 0
-      },
-      {
-        "RoleId": 5,
-        "Code": null,
-        "FeatureId": 3121,
-        "FeatureName": "Create Depol Group",
-        "ProgrammerCode": null,
-        "Controller": null,
-        "Action": null,
-        "Url": null,
-        "ParentId": 0,
-        "SortIndex": 0,
-        "IsDisplayForRoleRights": false,
-        "View": false,
-        "Add": false,
-        "Edit": false,
-        "Active": false,
-        "Delete": false,
-        "Export": true,
-        "IsHeader": false,
-        "FeatureCode": 0
-      }
+    }
+
     ];
 
     this.fieldData = [
@@ -190,6 +183,31 @@ export class PermissionComponent implements OnInit {
 
     ];
   }
+  onParentCheckboxChange(data: any, event: any): void {
+    // Assuming you have a field in your data indicating parent-child relationship (e.g., ParentId)
+    if (data.ParentId === 0) { // Assuming 0 indicates a parent feature
+      // Loop through child features and update their checkbox states accordingly
+      const parentChecked = event.target.checked;
+      this.updateChildCheckboxStates(data, parentChecked);
+    }
+  }
+
+  // Method to update checkbox states of child features
+  updateChildCheckboxStates(parentFeature: any, isChecked: boolean): void {
+    const parentId = parentFeature.FeatureId; // Assuming FeatureId is the unique identifier
+    this.featureData.forEach(feature => {
+      if (feature.ParentId === parentId) { // Assuming ParentId indicates the parent-child relationship
+        // Update the state of the child checkbox
+        feature.View = isChecked;
+        feature.Add = isChecked;
+        feature.Edit = isChecked;
+        feature.Active = isChecked;
+        feature.Delete = isChecked;
+        feature.Export = isChecked;
+      }
+    });
+  }
+  
 
   public headerText: Object = [{ text: "Feature Rights" },
   { text: "Field Rights" }];

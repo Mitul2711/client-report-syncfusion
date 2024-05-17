@@ -1,0 +1,52 @@
+<ejs-treegrid [dataSource]="data" [treeColumnIndex]="1" childMapping="subtasks" (rowDataBound)="onRowDataBound($event)">
+  <e-columns>
+    <e-column headerText="" [template]="template" width="10" textAlign="left"></e-column>
+    <e-column field="FeatureName" headerText="Feature Name" width="400" textAlign="left"></e-column>
+    <e-column headerText="All" width="120" textAlign="center">
+      <ng-template #template>
+        <ejs-checkbox  (change)="onAllCheckboxChange($event.target.checked)"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="View" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.View" (change)="onCheckboxChange(data, 'View')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="Add" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.Add" (change)="onCheckboxChange(data, 'Add')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="Edit" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.Edit" (change)="onCheckboxChange(data, 'Edit')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="Active" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.Active" (change)="onCheckboxChange(data, 'Active')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="Delete" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.Delete" (change)="onCheckboxChange(data, 'Delete')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+    <e-column headerText="Export" textAlign="center">
+      <ng-template #template let-data>
+        <ejs-checkbox [(checked)]="data.Export" (change)="onCheckboxChange(data, 'Export')"></ejs-checkbox>
+      </ng-template>
+    </e-column>
+  </e-columns>
+</ejs-treegrid>
+
+<hr>
+
+<div class="btn-last">
+  <div style="margin-left: 10px">
+    <button ejs-button cssClass="e-success" (click)="onSubmit()">Save</button>
+  </div>
+  <div>
+    <button ejs-button cssClass="e-danger" (click)="onCancel()">Cancel</button>
+  </div>
+</div>

@@ -4,11 +4,11 @@ import {CreatereporttemplateComponent} from "./components/createreporttemplate/c
 import {ReportComponent} from "./components/report/report.component";
 import {TableComponent} from "./pages/table/table.component";
 import {ChartsComponent} from "./pages/chart/charts.component";
-import { PopUpComponent } from './popup/pop-up/pop-up.component';
 import { HomeComponent } from './popup/home/home.component';
-import { TreeGridComponent, treeGridDetails } from '@syncfusion/ej2-angular-treegrid';
+import {PermisiionTreeComponent} from "./forms/permisiion-tree/permisiion-tree.component";
 
 const routes: Routes = [
+  // {path:'',component:PermisiionTreeComponent},
   {path:'',component:CreatereporttemplateComponent},
   // {path: '', component: TreeGridComponent}
   {path:'report', component:ReportComponent},

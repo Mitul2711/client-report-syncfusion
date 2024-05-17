@@ -1,9 +1,9 @@
 {
     "total": 67,
     "rows": [
-        {
-            "RoleId": 5,
-            "Code": null,
+      {
+        "RoleId": 5,
+        "Code": null,
             "FeatureId": 7,
             "FeatureName": "Company Master",
             "ProgrammerCode": null,
