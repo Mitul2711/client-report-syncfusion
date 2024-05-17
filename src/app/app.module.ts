@@ -59,6 +59,7 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { PermisiionTreeComponent } from './forms/permisiion-tree/permisiion-tree.component';
 import {findChildrenRecords, TreeGridModule} from "@syncfusion/ej2-angular-treegrid";
 import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-checkbox.component';
+import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/permisiion-tree-client.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-ch
     AddUserComponent,
     PermissionComponent,
     PermisiionTreeComponent,
-    GridtreeCheckboxComponent
+    GridtreeCheckboxComponent,
+    PermisiionTreeClientComponent
   ],
   imports: [
     BrowserModule,
