@@ -15,12 +15,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
-  FilterService,
   GridModule,
   GroupModelGenerator,
   GroupService,
-  PageService,
-  SortService
 } from "@syncfusion/ej2-angular-grids";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from '@angular/material/button';
@@ -57,6 +54,14 @@ import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { GridAllModule } from '@syncfusion/ej2-angular-grids';
 import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { TreeGridComponent } from './components/tree-grid/tree-grid.component';
+import { TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
+import {
+  PageService,
+  SortService,
+  FilterService,
+} from '@syncfusion/ej2-angular-treegrid';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +75,8 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
     RopdownlistComponent,
     AddStationComponent,
     AddUserComponent,
-    PermissionComponent
+    PermissionComponent,
+    TreeGridComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,7 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatCardModule,
+    MatCardModule,  
     ChartModule,
     TextBoxModule,
     TextAreaModule,
@@ -104,7 +110,8 @@ import { NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
     TabModule,
     CheckBoxModule,
     GridAllModule,
-    NumericTextBoxAllModule
+    NumericTextBoxAllModule,
+    TreeGridModule
   ],
   providers: [PageService, SortService, PageService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
   bootstrap: [AppComponent],

@@ -6,9 +6,11 @@ import {TableComponent} from "./pages/table/table.component";
 import {ChartsComponent} from "./pages/chart/charts.component";
 import { PopUpComponent } from './popup/pop-up/pop-up.component';
 import { HomeComponent } from './popup/home/home.component';
+import { TreeGridComponent, treeGridDetails } from '@syncfusion/ej2-angular-treegrid';
 
 const routes: Routes = [
   {path:'',component:CreatereporttemplateComponent},
+  // {path: '', component: TreeGridComponent}
   {path:'report', component:ReportComponent},
   {path:'table', component:TableComponent},
   {path:'chart' , component: ChartsComponent}

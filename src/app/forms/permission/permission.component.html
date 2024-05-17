@@ -8,11 +8,11 @@
                         <e-columns>
                             <e-column field="FeatureName" headerText="Feature Name" width="250" textAlign="center"
                                 [allowEditing]="true"></e-column>
-                            <e-column headerText="All" width="120" textAlign="center">
-                                <ng-template #template let-data let-rowIndex="index">
-                                    <ejs-checkbox #checkbox></ejs-checkbox>
-                                </ng-template>
-                            </e-column>
+                                <e-column headerText="All" width="120" textAlign="center">
+                                    <ng-template #template let-data let-rowIndex="index">
+                                        <ejs-checkbox #checkbox (change)="onChange($event)"></ejs-checkbox>
+                                    </ng-template>
+                                </e-column>
                             <e-column headerText="View" width="120" textAlign="center">
                                 <ng-template #template let-data let-rowIndex="index">
                                     <ejs-checkbox #checkbox [checked]="data.View"></ejs-checkbox>
@@ -23,7 +23,7 @@
                                     <ejs-checkbox #checkbox [checked]="data.Add"></ejs-checkbox>
                                 </ng-template>
                             </e-column>
-                            <e-column headerText="Edit" width="120" textAlign="ce   nter">
+                            <e-column headerText="Edit" width="120" textAlign="center">
                                 <ng-template #template let-data>
                                     <ejs-checkbox #checkbox [checked]="data.Edit"></ejs-checkbox>
                                 </ng-template>

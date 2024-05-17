@@ -14,7 +14,7 @@ export class PermissionComponent implements OnInit {
   @ViewChild('checkbox') public checkbox: CheckBoxComponent;
 
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   featureData: any;
   fieldData: any;
@@ -24,19 +24,23 @@ export class PermissionComponent implements OnInit {
   editSettings: any;
   toolbar: string[];
 
+
   ngOnInit(): void {
     this.getData(); // Assuming this method fetches your data
     this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
     this.toolbar = ['Edit', 'Update', 'Cancel'];
   }
-  
+
   onActionComplete(args: ActionEventArgs): void {
     if (args.requestType === 'save') {
-      // Log the edited data to the console
       console.log(args.data);
     }
   }
-  
+
+  onChange(event) {
+    this.check = event.checked;
+  }
+
   // getData() {
   //   this.dataService.getFeatureData().subscribe(res => {
   //     this.featureData = res;      

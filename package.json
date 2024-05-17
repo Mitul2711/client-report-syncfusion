@@ -28,11 +28,13 @@
     "@syncfusion/ej2-angular-inputs": "^25.1.42",
     "@syncfusion/ej2-angular-navigations": "^20.4.53",
     "@syncfusion/ej2-angular-popups": "^25.2.3",
+    "@syncfusion/ej2-angular-treegrid": "^25.2.4",
     "@syncfusion/ej2-base": "^24.2.8",
     "@syncfusion/ej2-charts": "25.1.35",
     "@syncfusion/ej2-dropdowns": "^25.2.3",
     "@syncfusion/ej2-material-theme": "^25.1.42",
     "@syncfusion/ej2-popups": "^25.1.42",
+    "@syncfusion/ej2-treegrid": "^25.2.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
