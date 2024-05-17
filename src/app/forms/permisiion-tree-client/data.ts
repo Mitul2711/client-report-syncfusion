@@ -112,7 +112,7 @@ export let sampleData: Object[] = [
         "FeatureCode": 0
       }
 
-      ]
+    ]
   },
   {
     "RoleId": 4,

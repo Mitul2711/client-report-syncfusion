@@ -3,15 +3,15 @@ import { sampleData, sampleData2 } from './data';
 import { ActionEventArgs, RowDataBoundEventArgs, RowDeselectEventArgs, RowSelectEventArgs } from '@syncfusion/ej2-grids';
 import { GridComponent, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { TreeGridComponent } from '@syncfusion/ej2-angular-treegrid';
-import { PopupService } from 'src/app/service/popup.service';
+import {PopupService} from "../../service/popup.service";
 
 
 @Component({
-  selector: 'app-permisiion-tree',
-  templateUrl: './permisiion-tree.component.html',
-  styleUrls: ['./permisiion-tree.component.scss']
+  selector: 'app-permisiion-tree-client',
+  templateUrl: './permisiion-tree-client.component.html',
+  styleUrls: ['./permisiion-tree-client.component.scss']
 })
-export class PermisiionTreeComponent implements OnInit {
+export class PermisiionTreeClientComponent implements OnInit {
 
   fieldData: any;
   data: any[];
@@ -23,7 +23,6 @@ export class PermisiionTreeComponent implements OnInit {
 
   public selectionOptions?: SelectionSettingsModel;
   @ViewChild('grid', { static: false }) grid: GridComponent;
-selectionSettings: any;
   constructor(private modelDialogService: PopupService, private cdr: ChangeDetectorRef) { }
 
 
@@ -42,6 +41,35 @@ selectionSettings: any;
 
   }
 
+  private rowMethod(args: any): void {
+
+    console.log("Row Method");
+  }
+
+  rowSelected(args: any): void {
+    // this.rowMethod(args);
+    console.log("Row Selected");
+
+  }
+  rowDeselected(args: any): void {
+    // this.rowMethod(args);
+    console.log("Row Deselected");
+
+  }
+
+  checkboxChange(args: any): void {
+    debugger
+    const isChecked = args.checked;
+    const featureId = args.rowData.FeatureId;
+    const parentId = args.rowData.ParentId
+
+    console.log(args);
+    this.data = this.data || [];
+    let updatedData = this.updateFeaturePermissions(this.data, featureId, isChecked, parentId);
+    if (updatedData) {
+      this.data = updatedData;
+    }
+  }
 
   updateFeaturePermissions(data: any[], featureId: number, isChecked: boolean, parentId: number): any[] | null {
     return data.map((item: any) => {
@@ -109,70 +137,13 @@ selectionSettings: any;
     }
   }
 
-
-  private rowMethod(args: any): void {
-    // Your rowMethod logic here
-    // console.log("Row Method");
-  }
-
-  public rowSelected(args: any): void {
-    // this.rowMethod(args);
-    // console.log("Row Selected");
-
-  }
-
-  public rowDeselected(args: any): void {
-    // this.rowMethod(args);
-    console.log("Row Data:", args.data);
-    // console.log("Row Deselected");
-
-  }
-
-  // public checkboxChange(args: any): void {
-  //   // Your checkboxChange logic here
-  //   console.log("Row Data:", args.rowData);
-  //   console.log("Checkbox Change");
-  //
-  //   const isChecked = !args.checked;
-  //   const rowData = !args.rowData;
-  //
-  //   // Update all fields of the row data to the checked status
-  //   Object.keys(rowData).forEach(key => {
-  //     rowData[key] = isChecked;
-  //   });
-  //
-  //   // Log the updated row data
-  //   console.log("Updated Row Data:", rowData);
-  // }
-
-
-  public checkboxChange(args: any): void {
-
-    console.log("Row Data:", args.rowData);
-    console.log("Checkbox Change");
-
-    const isChecked = args.checked;
-    const rowData = args.rowData;
-
-    // Find the index of the changed row in the data array
-    const rowIndex = this.data.findIndex(item => item === rowData);
-
-    // Update all fields of the row data to the checked status
-    if (rowIndex !== -1) {
-      Object.keys(rowData).forEach(key => {
-        this.data[rowIndex][key] = isChecked;
-        this.data[key] = isChecked;
-      });
-
-      // Log the updated row data
-      console.log("Updated Row Data:", this.data[rowIndex]);
-    } else {
-      console.error("Row data not found in the data array.");
-    }
-
-
-  }
-
-
   template = '<div class="arrow"></div>';
+
+
+
+
+
+
+
+
 }
