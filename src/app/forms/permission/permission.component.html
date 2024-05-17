@@ -48,7 +48,7 @@
 
             <e-tabitem [header]='headerText[1]'>
                 <ng-template #content>
-                    <ejs-grid #grid [dataSource]="fieldData" height='500' [editSettings]="editSettings" [toolbar]="toolbar" (actionComplete)="onActionComplete($event)">
+                    <ejs-grid #grid [dataSource]="fieldData" height='500' [editSettings]="editSettings" [toolbar]="toolbar">
                         <e-columns>
                             <e-column field="DisplayName" headerText="Fields"  textAlign="center" allowEditing=true ></e-column>
 

@@ -72,7 +72,7 @@ import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-ch
     AddUserComponent,
     PermissionComponent,
     PermisiionTreeComponent,
-    GridtreeCheckboxComponent
+    GridtreeCheckboxComponent,
   ],
   imports: [
     BrowserModule,
