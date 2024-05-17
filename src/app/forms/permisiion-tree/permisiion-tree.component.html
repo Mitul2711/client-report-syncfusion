@@ -3,7 +3,7 @@
 </div>
 <div>
 <ejs-treegrid [dataSource]='data' [treeColumnIndex]='1' childMapping='subtasks' (rowDataBound)='onRowDataBound($event)'
-              height="410"
+              height="500"
               [autoCheckHierarchy]="true"
               (checkboxChange)="checkboxChange($event)"
               [selectionSettings]="selectionSettings"
@@ -47,17 +47,19 @@
   </e-columns>
 </ejs-treegrid>
 <hr>
-<div class="btn-last">
-  <div style="margin-left: 10px">
-    <button ejs-button cssClass="e-success" (click)="onSubmit()">
-      Save
-    </button>
-  </div>
-  <div>
-    <button ejs-button cssClass="e-danger" (click)="onCancel()">
-      Cancel
-    </button>
-  </div>
+
+  <div class="sticky-buttons-container">
+    <div style="margin-left: 10px">
+      <button ejs-button cssClass="e-danger" (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+    <div>
+      <button ejs-button cssClass="e-success" (click)="onSubmit()">
+        Save
+      </button>
+    </div>
+
 </div>
 
 </div>

@@ -11,6 +11,7 @@ import { AddUserComponent } from 'src/app/forms/add-user/add-user.component';
 import { PermissionComponent } from 'src/app/forms/permission/permission.component';
 import {PermisiionTreeComponent} from "../../forms/permisiion-tree/permisiion-tree.component";
 import {GridtreeCheckboxComponent} from "../../forms/gridtree-checkbox/gridtree-checkbox.component";
+import {PermisiionTreeClientComponent} from "../../forms/permisiion-tree-client/permisiion-tree-client.component";
 
 @Component({
   selector: 'app-createreporttemplate',
@@ -395,6 +396,10 @@ export class CreatereporttemplateComponent implements OnInit {
 
   openPopup5(){
     this.popupService.openModal(GridtreeCheckboxComponent, this.viewContainerRef);
+  }
+
+  openPopup6(){
+    this.popupService.openModal(PermisiionTreeClientComponent, this.viewContainerRef);
   }
 
 
