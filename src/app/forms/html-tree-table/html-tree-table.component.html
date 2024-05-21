@@ -1,0 +1,56 @@
+<div class="card" style="width: 1200px">
+  <div class="card-body">
+    <table   class="table table-bordered">
+      <thead class="bg-light text-dark">
+      <tr>
+        <td><input type="checkbox" id="headerCheckbox" (change)="toggleAllCheckboxes($event)">FeatureName</td>
+        <td>View</td>
+        <td>Add</td>
+        <td>Edit</td>
+        <td>Active</td>
+        <td>Delete</td>
+        <td>Export</td>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let item of Invoiceheader; let i=index">
+        <tr class="color-table">
+          <td>
+            <input type="checkbox" [checked]="isMainTaskSelected(i)" (change)="toggleMainTask($event, i)">
+            {{item.FeatureName}}
+          </td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'View')" (change)="toggleAll($event, i, 'View')"></td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'Add')" (change)="toggleAll($event, i, 'Add')"></td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'Edit')" (change)="toggleAll($event, i, 'Edit')"></td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'Active')" (change)="toggleAll($event, i, 'Active')"></td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'Delete')" (change)="toggleAll($event, i, 'Delete')"></td>
+          <td><input type="checkbox" [checked]="isAllChecked(i, 'Export')" (change)="toggleAll($event, i, 'Export')"></td>
+        </tr>
+        <tr *ngFor="let subtask of item.subtasks; let j=index">
+          <td>
+            <input type="checkbox" [checked]="isAllSubtaskChecked(i, j)" (change)="toggleSubtask($event, i, j)">
+            {{subtask.FeatureName}}
+          </td>
+          <td><input type="checkbox" [checked]="subtask.View" (change)="toggleCheckbox($event, i, j, 'View')"></td>
+          <td><input type="checkbox" [checked]="subtask.Add" (change)="toggleCheckbox($event, i, j, 'Add')"></td>
+          <td><input type="checkbox" [checked]="subtask.Edit" (change)="toggleCheckbox($event, i, j, 'Edit')"></td>
+          <td><input type="checkbox" [checked]="subtask.Active" (change)="toggleCheckbox($event, i, j, 'Active')"></td>
+          <td><input type="checkbox" [checked]="subtask.Delete" (change)="toggleCheckbox($event, i, j, 'Delete')"></td>
+          <td><input type="checkbox" [checked]="subtask.Export" (change)="toggleCheckbox($event, i, j, 'Export')"></td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
