@@ -414,6 +414,4 @@ export class CreatereporttemplateComponent implements OnInit {
     this.popupService.openModal(HtmlTreeTableComponent, this.viewContainerRef);
   }
 
-
-
 }
