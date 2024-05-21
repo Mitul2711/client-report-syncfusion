@@ -138,41 +138,6 @@ export class PermisiionTreeComponent implements OnInit {
   }
 
 
-  private rowMethod(args: any): void {
-    // Your rowMethod logic here
-    // console.log("Row Method");
-  }
-
-  public rowSelected(args: any): void {
-    // this.rowMethod(args);
-    // console.log("Row Selected");
-
-  }
-
-  public rowDeselected(args: any): void {
-    // this.rowMethod(args);
-    console.log("Row Des Data:", args.data);
-    // console.log("Row Deselected");
-
-  }
-
-  public checkboxChange(args: any): void {
-    // Your checkboxChange logic here
-    console.log("Row Data:", args.rowData);
-    console.log("Checkbox Change");
-
-    const isChecked = !args.checked;
-    const rowData = !args.rowData;
-
-    // Update all fields of the row data to the checked status
-    Object.keys(rowData).forEach(key => {
-      rowData[key] = isChecked;
-    });
-
-    // Log the updated row data
-    console.log("Updated Row Data:", rowData);
-  }
-
 
   // public checkboxChange(args: any): void {
   //
