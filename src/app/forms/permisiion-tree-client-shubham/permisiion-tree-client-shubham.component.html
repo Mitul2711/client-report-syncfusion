@@ -11,8 +11,9 @@
             <e-columns>
               <e-column headerText="" [template]="template" width="10" textAlign="left"></e-column>
               <e-column field="FeatureName" headerText="Feature Name" width="400" textAlign="left"
-                         [showCheckbox]="true"></e-column>
-              <e-column headerText="View" textAlign="center" >
+                        [showCheckbox]="true"></e-column>
+
+              <e-column headerText="View" textAlign="center">
                 <ng-template #template let-data>
                   <ejs-checkbox #checkbox [(checked)]="data.View"></ejs-checkbox>
                 </ng-template>

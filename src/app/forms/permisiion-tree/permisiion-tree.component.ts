@@ -57,7 +57,7 @@ export class PermisiionTreeComponent implements OnInit {
 
   public rowDeselected(args: any): void {
     // this.rowMethod(args);
-    console.log("Row Data:", args.data);
+    console.log("Row Des Data:", args.data);
     // console.log("Row Deselected");
 
   }
