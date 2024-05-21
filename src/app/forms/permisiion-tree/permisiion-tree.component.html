@@ -1,150 +1,87 @@
-<div style="margin-top: 20px">
-  <h1>Tree Grid</h1>
-</div>
-<div>
-  <ejs-treegrid [dataSource]='data' [treeColumnIndex]='1' childMapping='subtasks'
-    (rowDataBound)='onRowDataBound($event)' height="500" [autoCheckHierarchy]="true"
-    (checkboxChange)="checkboxChange($event)" [selectionSettings]="selectionSettings"
-    (rowSelected)="rowSelected($event)" (rowDeselected)="rowDeselected($event)">
-    <e-columns>
-      <e-column headerText='' [template]="template" width="10" textAlign="left"></e-column>
-      <e-column field="FeatureName" headerText="Feature Name" width="400" textAlign="left"
-        [showCheckbox]="true"></e-column>
-      <e-column headerText="View" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.View"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Add" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.Add"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Edit" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.Edit"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Active" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.Active"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Delete" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.Delete"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Export" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [checked]="data.Export"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-    </e-columns>
-  </ejs-treegrid>
-  <hr>
-
-  <div class="sticky-buttons-container">
-    <div style="margin-left: 10px">
-      <button ejs-button cssClass="e-danger" (click)="onCancel()">
-        Cancel
-      </button>
-    </div>
-    <div>
-      <button ejs-button cssClass="e-success" (click)="onSubmit()">
-        Save
-      </button>
-    </div>
-
-  </div>
-
-  <ejs-treegrid [dataSource]="data" [treeColumnIndex]="1" childMapping="subtasks"
-    (rowDataBound)="onRowDataBound($event)" [selectionSettings]='selectionOptions' [autoCheckHierarchy]="true"
-    (checkboxChange)="checkboxChange($event)" (rowSelected)="rowSelected($event)"
-    (rowDeselected)="rowDeselected($event)">
-    <e-columns>
-      <e-column headerText="" [template]="template" width="10" textAlign="left"></e-column>
-      <e-column field="FeatureName" headerText="Feature Name" width="400" textAlign="left"
-        [showCheckbox]="true"></e-column>
-
-      <e-column headerText="View" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.View"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Add" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.Add"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Edit" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.Edit"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Active" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.Active"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Delete" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.Delete"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-      <e-column headerText="Export" textAlign="center">
-        <ng-template #template let-data>
-          <ejs-checkbox #checkbox [(checked)]="data.Export"></ejs-checkbox>
-        </ng-template>
-      </e-column>
-    </e-columns>
-  </ejs-treegrid>
-
-
-  <hr>
-  <div class="btn-last">
-    <div style="margin-left: 10px">
-      <button ejs-button cssClass="e-success" (click)="onSubmit()">
-        Save
-      </button>
-    </div>
-    <div>
-      <button ejs-button cssClass="e-danger" (click)="onCancel()">
-        Cancel
-      </button>
-    </div>
-  </div>
-
-
-  <e-tabitem [header]='headerText[1]'>
-    <ng-template #content>
-      <ejs-grid #grid [dataSource]="fieldData" [editSettings]="editSettings" [toolbar]="toolbar"
-        (actionComplete)="onActionComplete($event)">
-        <e-columns>
-          <e-column field="DisplayName" headerText="Fields" width="300" textAlign="center"></e-column>
-
-          <e-column isPrimaryKey="true" headerText="Action" width="50" textAlign="center">
-            <ng-template #template let-data>
-              <ejs-checkbox #checkbox [checked]="data.Edit"></ejs-checkbox>
-            </ng-template>
-          </e-column>
-
-        </e-columns>
-      </ejs-grid>
-      <hr>
-      <div class="btn-last">
-        <div style="margin-left: 10px">
-          <button ejs-button cssClass="e-success" (click)="onSubmit()">
-            Save
-          </button>
-        </div>
-        <div>
-          <button ejs-button cssClass="e-danger" (click)="onCancel()">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </ng-template>
-  </e-tabitem>
-
+<div style="height: 600px;">
+  <ejs-tab id="tab_default" heightAdjustMode='Auto'>
+    <e-tabitems>
+      <e-tabitem [header]='headerText[0]' cssClass="e-outline">
+          <ejs-treegrid [dataSource]='data' [treeColumnIndex]='1' childMapping='subtasks'
+              (rowDataBound)="onRowDataBound($event)" [selectionSettings]='selectionOptions'
+              [autoCheckHierarchy]="true" (checkboxChange)="checkboxChange($event)"
+              (rowSelected)="rowSelected($event)" (rowDeselected)="rowDeselected($event)">
+            <e-columns>
+              <e-column headerText="" [template]="template" width="10" textAlign="left"></e-column>
+              <e-column field="FeatureName" headerText="Feature Name" width="400" textAlign="left"
+                  [showCheckbox]="true"></e-column>
+              <e-column headerText="View" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.View"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+              <e-column headerText="Add" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.Add"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+              <e-column headerText="Edit" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.Edit"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+              <e-column headerText="Active" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.Active"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+              <e-column headerText="Delete" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.Delete"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+              <e-column headerText="Export" textAlign="center">
+                <ng-template #template let-data>
+                  <ejs-checkbox #checkbox [(checked)]="data.Export"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+            </e-columns>
+          </ejs-treegrid>
+          <hr>
+          <div class="btn-last">
+            <div style="margin-left: 10px">
+              <button ejs-button cssClass="e-success" (click)="onSubmit()">
+                Save
+              </button>
+            </div>
+            <div>
+              <button ejs-button cssClass="e-danger" (click)="onCancel()">
+                Cancel
+              </button>
+            </div>
+          </div>
+      </e-tabitem>
+      <e-tabitem [header]='headerText[1]'>
+          <ejs-grid #grid [dataSource]="fieldData" [editSettings]="editSettings" [toolbar]="toolbar"
+              (actionComplete)="onActionComplete($event)">
+            <e-columns>
+              <e-column field="DisplayName" headerText="Fields" width="300" textAlign="center"></e-column>
+              <e-column isPrimaryKey="true" headerText="Action" width="50" textAlign="center">
+                <ng-template #template7 let-data>
+                  <ejs-checkbox #checkbox [checked]="data.Edit"></ejs-checkbox>
+                </ng-template>
+              </e-column>
+            </e-columns>
+          </ejs-grid>
+          <hr>
+          <div class="btn-last">
+            <div style="margin-left: 10px">
+              <button ejs-button cssClass="e-success" (click)="onSubmit()">
+                Save
+              </button>
+            </div>
+            <div>
+              <button ejs-button cssClass="e-danger" (click)="onCancel()">
+                Cancel
+              </button>
+            </div>
+          </div>
+      </e-tabitem>
+    </e-tabitems>
+  </ejs-tab>
 </div>

@@ -65,7 +65,7 @@ export class PopupService {
       cancelButton: {
         cssClass: 'hidden-button'
       },
-      width: dialogWidth // Set the dialog width dynamically
+      width: 700 // Set the dialog width dynamically
     });
 
     this.dialogInstance.beforeOpen = () => {

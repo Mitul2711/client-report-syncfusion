@@ -20,6 +20,8 @@ import {
   GridModule,
   GroupModelGenerator,
   GroupService,
+  PageService,
+  SortService
 } from "@syncfusion/ej2-angular-grids";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from '@angular/material/button';
@@ -55,7 +57,7 @@ import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { PermisiionTreeComponent } from './forms/permisiion-tree/permisiion-tree.component';
-import {findChildrenRecords, PageService, SortService, TreeGridModule} from "@syncfusion/ej2-angular-treegrid";
+import {findChildrenRecords, TreeGridModule} from "@syncfusion/ej2-angular-treegrid";
 import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-checkbox.component';
 import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/permisiion-tree-client.component';
 
@@ -94,7 +96,7 @@ import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/pe
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatCardModule,  
+    MatCardModule,
     ChartModule,
     TextBoxModule,
     TextAreaModule,
@@ -111,7 +113,7 @@ import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/pe
 
 
   ],
-  providers: [PageService, SortService, PageService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
+  providers: [PageService, SortService, FilterService, GroupService , CategoryService, LegendService, TooltipService, DataLabelService, LineSeriesService,StackingLineSeriesService, DataService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
