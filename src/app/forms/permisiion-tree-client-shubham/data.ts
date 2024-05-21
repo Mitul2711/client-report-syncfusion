@@ -2,7 +2,6 @@ export let sampleData: Object[] = [
 
   {
     "RoleId": 5,
-    "ParentPage":true,
     "Code": null,
     "FeatureId": 30,
     "FeatureName": "User Master",
@@ -26,7 +25,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 8,
         "FeatureName": "Zone Details",
         "ProgrammerCode": null,
@@ -49,7 +47,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 21,
         "FeatureName": "Roles",
         "ProgrammerCode": null,
@@ -72,7 +69,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 31,
         "FeatureName": "User List",
         "ProgrammerCode": null,
@@ -96,7 +92,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3129,
         "FeatureName": "User Activity",
         "ProgrammerCode": null,
@@ -122,7 +117,6 @@ export let sampleData: Object[] = [
   {
     "RoleId": 4,
     "Code": null,
-    "ParentPage":true,
     "FeatureId": 17,
     "FeatureName": "Station Details\r\n Master",
     "ProgrammerCode": null,
@@ -145,7 +139,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 128,
         "FeatureName": "Station List",
         "ProgrammerCode": null,
@@ -168,7 +161,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 142,
         "FeatureName": "Manage Station",
         "ProgrammerCode": null,
@@ -191,7 +183,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 110,
         "FeatureName": "Copy Multiple Channel",
         "ProgrammerCode": null,
@@ -214,7 +205,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 149,
         "FeatureName": "Query Setting",
         "ProgrammerCode": null,
@@ -237,7 +227,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 111,
         "FeatureName": "Custom Equation",
         "ProgrammerCode": null,
@@ -263,7 +252,6 @@ export let sampleData: Object[] = [
     "RoleId": 1,
     "Code": null,
     "FeatureId": 27,
-    "ParentPage":true,
     "FeatureName": "Settings",
     "ProgrammerCode": null,
     "Controller": null,
@@ -285,7 +273,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 239,
         "FeatureName": "Port Setting",
         "ProgrammerCode": null,
@@ -308,7 +295,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 2072,
         "FeatureName": "Alarm Tag Setting",
         "ProgrammerCode": null,
@@ -331,7 +317,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 225,
         "FeatureName": "Analog Channel List",
         "ProgrammerCode": null,
@@ -354,7 +339,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 213,
         "FeatureName": "Digital Channel List",
         "ProgrammerCode": null,
@@ -377,7 +361,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3102,
         "FeatureName": "Login Page Setting",
         "ProgrammerCode": null,
@@ -403,7 +386,6 @@ export let sampleData: Object[] = [
   {
     "RoleId": 2,
     "Code": null,
-    "ParentPage":true,
     "FeatureId": 3111,
     "FeatureName": "Depolarisation",
     "ProgrammerCode": null,
@@ -426,7 +408,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3120,
         "FeatureName": "Set Depol",
         "ProgrammerCode": null,
@@ -449,7 +430,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3121,
         "FeatureName": "Create Depol Group",
         "ProgrammerCode": null,
@@ -472,7 +452,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3122,
         "FeatureName": "Tag Settings  for Depol",
         "ProgrammerCode": null,
@@ -495,7 +474,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3123,
         "FeatureName": "Register Settings for Depol",
         "ProgrammerCode": null,
@@ -521,7 +499,6 @@ export let sampleData: Object[] = [
     "RoleId": 3,
     "Code": null,
     "FeatureId": 512,
-    "ParentPage":true,
     "FeatureName": "templates",
     "ProgrammerCode": null,
     "Controller": null,
@@ -543,7 +520,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 62,
         "FeatureName": "Mimic Template Master",
         "ProgrammerCode": null,
@@ -566,7 +542,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3097,
         "FeatureName": "Create Mimic Template",
         "ProgrammerCode": null,
@@ -590,7 +565,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 61,
         "FeatureName": "Mimic Template List",
         "ProgrammerCode": null,
@@ -613,7 +587,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 2085,
         "FeatureName": "TRU Location",
         "ProgrammerCode": null,
@@ -636,7 +609,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 20,
         "FeatureName": "Report Template Master",
         "ProgrammerCode": null,
@@ -659,7 +631,6 @@ export let sampleData: Object[] = [
       {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 15,
         "FeatureName": "Email Template Master",
         "ProgrammerCode": null,
@@ -681,7 +652,6 @@ export let sampleData: Object[] = [
       }, {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 17,
         "FeatureName": "Create Email Template",
         "ProgrammerCode": null,
@@ -703,7 +673,6 @@ export let sampleData: Object[] = [
       }, {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 16,
         "FeatureName": "Email Template List",
         "ProgrammerCode": null,
@@ -725,7 +694,6 @@ export let sampleData: Object[] = [
       }, {
         "RoleId": 5,
         "Code": null,
-        "ChildPage":true,
         "FeatureId": 3108,
         "FeatureName": "GIS Template Master",
         "ProgrammerCode": null,

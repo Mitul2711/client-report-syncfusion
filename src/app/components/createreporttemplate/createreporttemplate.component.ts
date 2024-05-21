@@ -12,6 +12,10 @@ import { PermissionComponent } from 'src/app/forms/permission/permission.compone
 import {PermisiionTreeComponent} from "../../forms/permisiion-tree/permisiion-tree.component";
 import {GridtreeCheckboxComponent} from "../../forms/gridtree-checkbox/gridtree-checkbox.component";
 import {PermisiionTreeClientComponent} from "../../forms/permisiion-tree-client/permisiion-tree-client.component";
+import {
+  PermisiionTreeClientShubhamComponent
+} from "../../forms/permisiion-tree-client-shubham/permisiion-tree-client-shubham.component";
+import {HtmlTreeTableComponent} from "../../forms/html-tree-table/html-tree-table.component";
 
 @Component({
   selector: 'app-createreporttemplate',
@@ -400,6 +404,14 @@ export class CreatereporttemplateComponent implements OnInit {
 
   openPopup6(){
     this.popupService.openModal(PermisiionTreeClientComponent, this.viewContainerRef);
+  }
+
+  openPopup7(){
+    this.popupService.openModal(PermisiionTreeClientShubhamComponent, this.viewContainerRef);
+  }
+
+  openPopup8(){
+    this.popupService.openModal(HtmlTreeTableComponent, this.viewContainerRef);
   }
 
 

@@ -60,6 +60,8 @@ import { PermisiionTreeComponent } from './forms/permisiion-tree/permisiion-tree
 import {findChildrenRecords, TreeGridModule} from "@syncfusion/ej2-angular-treegrid";
 import { GridtreeCheckboxComponent } from './forms/gridtree-checkbox/gridtree-checkbox.component';
 import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/permisiion-tree-client.component';
+import { PermisiionTreeClientShubhamComponent } from './forms/permisiion-tree-client-shubham/permisiion-tree-client-shubham.component';
+import { HtmlTreeTableComponent } from './forms/html-tree-table/html-tree-table.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { PermisiionTreeClientComponent } from './forms/permisiion-tree-client/pe
     PermissionComponent,
     PermisiionTreeComponent,
     GridtreeCheckboxComponent,
-    PermisiionTreeClientComponent
+    PermisiionTreeClientComponent,
+    PermisiionTreeClientShubhamComponent,
+    HtmlTreeTableComponent
   ],
   imports: [
     BrowserModule,

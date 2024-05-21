@@ -59,6 +59,7 @@ export class PopupService {
       showCloseIcon: true,
       closeOnEscape: true,
       animationSettings: { effect: 'Zoom' },
+      // width: 400,
       okButton: {
         cssClass: 'hidden-button'
       },
